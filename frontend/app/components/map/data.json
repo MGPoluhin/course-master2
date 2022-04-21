@@ -12,7 +12,10 @@
         "iconImageHref":"../icons/icon-map-point.svg",
         "iconLayout": "default#image",
         "iconImageSize": [32, 37],
-        "hasBalloon": false
+        "iconImageOffset": [-16, -37],
+        "hintOffset": [20, -30],
+        "hasBalloon": false,
+        "hintLayout": "my#hintLayout"
 
 
       },
@@ -27,7 +30,10 @@
         "iconImageHref":"../icons/icon-map-point.svg",
         "iconLayout": "default#image",
         "iconImageSize": [32, 37],
-        "hasBalloon": false
+        "iconImageOffset": [-16, -37],
+        "hintOffset": [20, -30],
+        "hasBalloon": false,
+        "hintLayout": "my#hintLayout"
 
       },
       "properties": {
@@ -41,7 +47,10 @@
         "iconImageHref":"../icons/icon-map-point.svg",
         "iconLayout": "default#image",
         "iconImageSize": [32, 37],
-        "hasBalloon": false
+        "iconImageOffset": [-16, -37],
+        "hintOffset": [20, -30],
+        "hasBalloon": false,
+        "hintLayout": "my#hintLayout"
 
       },
       "properties": {

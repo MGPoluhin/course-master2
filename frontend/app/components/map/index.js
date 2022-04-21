@@ -9,20 +9,31 @@ export class Map {
         this.map = null
         this.cfg = getConfig(this.instance, MapsCollection.instance)
         this.bindEvents()
-        console.log(this.cfg)
+
     }
 
     init() {
 
+
         const HintLayout = ymaps.templateLayoutFactory.createClass( "<div class='map__hintlayout'>" +
-            "<b>{{properties.hintTitle}}</b><br/>" +
-            "{{properties.hintSubtitle}}" +
+            "<div class='map__hintlayout-title'>{{properties.hintTitle}}</div>" +
+            "<div class='map__hintlayout-content'>{{properties.hintSubtitle}}</div>" +
             "</div>")
+        ymaps.layout.storage.add('my#hintLayout', HintLayout);
+
         this.map = new ymaps.Map(this.instance,this.cfg,{suppressMapOpenBlock: true})
         this.cluster = new ymaps.Clusterer({clusterDisableClickZoom: true})
         this.cluster.add(this.getPoints())
-        this.map.geoObjects.add(this.cluster)
+        this.cluster.events
+            .add('mouseenter', function (e){
+                e.get('target').options.set({iconImageSize: [42, 50], iconImageOffset: [-21, -50]});
+            })
+            .add('mouseleave', function (e){
+                e.get('target').options.set({iconImageSize: [32, 37], iconImageOffset: [-16, -37]});
+            });
         console.log(this.cluster)
+        this.map.geoObjects.add(this.cluster)
+
 
     }
     getPoints () {
