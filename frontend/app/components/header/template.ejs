@@ -16,14 +16,13 @@ const attrs = extraAttrs.join(" ")
 	<%- extraAttrs %>
 >
 	<div class="header__left">
-		<div class="header__logo">
+
 			<%- require("../logo/template.ejs")({
 				extraClasses: [
 					"header__logo"
 				]
-
 			}) %>
-		</div>
+
 		<nav class="header__navigation">
 			<ul class="header__navigation-list">
 				<li class="header__navigation-item"><a href="/" class="header__navigation-link">О компании</a></li>

@@ -32,18 +32,13 @@ export default class TimerCollections extends Collection{
     static instance = '[data-js-timer]'
     constructor() {
         super();
-        this.load()
+        this.init()
     }
 
     init() {
-        console.log(TimerCollections.instance)
         document.querySelectorAll(TimerCollections.instance).forEach( el => {
             this.collection = new Timer(el)
         })
     }
-    load() {
 
-            this.init()
-
-    }
 }
