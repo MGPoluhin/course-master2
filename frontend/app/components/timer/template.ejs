@@ -1,0 +1,12 @@
+<%
+const cfg = { ...require("./data.json"), ...arguments?.[0] }
+const {
+	countdownData,
+	label
+} = cfg
+%>
+
+<div class="timer">
+	<div class="timer__label"><%= label %></div>
+	<div class="timer__interval" data-js-timer='<%- JSON.stringify(cfg) %>'></div>
+</div>

@@ -1,0 +1,26 @@
+<%
+const cfg = { ...require("./data.json"), ...arguments?.[0] }
+const {
+	extraClasses,
+	extraAttrs,
+	isAltView,
+	href
+} = cfg
+%>
+
+<%
+const classes = `logo ${extraClasses.join(" ")}`.trim()
+const attrs = extraAttrs.join(" ")
+%>
+
+	<a
+		class="<%= classes ;%>"
+		href="<%= href ;%>"
+		<%- attrs; %>
+	>
+		<% if (isAltView) { %>
+			<img class="logo__alt-img" src="./images/altLogo.png" alt="">
+			<% } else { %>
+				<img class="logo__img" src="./images/Logo.png" alt="">
+			<% } %>
+	</a>

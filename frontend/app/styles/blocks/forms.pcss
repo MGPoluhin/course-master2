@@ -1,0 +1,61 @@
+@import "../media.pcss";
+.form{
+
+    --form-flex-direction:row;
+    --form-margine-bottom: 30px;
+
+    --col-position: relative;
+    --col-flex-direction: column;
+    --col-flex-basis: 100%;
+    --col-margine-right: 41px;
+    --com-margine-bottom: 20px;
+
+    --row-margine-bottom: 20px;
+
+    position: relative;
+    display: block;
+    flex-direction: var(--form-flex-direction);
+    margin-bottom: var(--form-margine-bottom);
+    &__col{
+        position: var(--col-position);
+        display: flex;
+        flex-direction: var(--col-flex-direction);
+        flex-basis: var(--col-flex-basis);
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: var(--com-margine-bottom);
+        &:not(:last-child) {
+            margin-right: var(--col-margine-right);
+
+        }
+    }
+    &__row{
+        position: relative;
+        display: flex;
+        &:not(:last-child) {
+            margin-bottom: var(--row-margine-bottom);
+        }
+    }
+
+}
+
+@media (--tablet-s) {
+    .form {
+
+        --form-flex-direction:row;
+        --form-margine-bottom: 30px;
+
+        --col-position: relative;
+        --col-flex-direction: column;
+        --col-flex-basis: 100%;
+        --col-margine-right: 41px;
+        --com-margine-bottom: 20px;
+
+        --row-flex-direction: ro;
+        --row-margine-bottom: 20px;
+        &__row{
+            display: block;
+        }
+
+    }
+}

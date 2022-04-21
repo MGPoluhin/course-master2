@@ -1,0 +1,80 @@
+<div
+        class="modal modal--feedback"
+        id="modal-feedback"
+        data-js-modal
+>
+  <header class="modal__header">
+    <h3 class="modal__title h2 ">Обратная связь</h3>
+    <div class="modal__subtitle">Оставьте Ваши данные, наш специалист свяжется с Вами в ближайшее время.</div>
+  </header>
+
+
+
+  <form action="" class="form">
+    <div class="form__row">
+      <div class="form__col">
+        <div class="form__row">
+          <%- require("../components/input/template.ejs")({
+            label: "ФИО*",
+            type: "text",
+            name: "suidfsdkf"
+
+          }) %>
+        </div>
+        <div class="form__row">
+          <%- require("../components/input/template.ejs")({
+            label: "ТЕЛЕФОН*",
+            type: "text",
+            name: "suidfsdkf"
+          }) %>
+        </div>
+        <div class="form__row">
+          <%- require("../components/input/template.ejs")({
+            label: "ЭЛЕКТРОННАЯ ПОЧТА*",
+            type: "text",
+            name: "suidfsdkf"
+          }) %>
+        </div>
+      </div>
+      <div class="form__col">
+          <%- require("../components/input/template.ejs")({
+            extraClasses: [
+              "form-input-fullblock"
+            ],
+            label: "Текст вопроса",
+            type: "text",
+            name: "suidfsdkf"
+          }) %>
+      </div>
+    </div>
+
+  </form>
+
+  <footer class="modal__actions">
+    <div class="modal__actions-left">
+
+      <div class="modal__recaptcha">
+        <%- require("../components/g-recaptcha/template.ejs")({
+          sitekey: "6Lf-QXsfAAAAACmxka6G6LcSyfAjnygR_rFzIf9V"
+        }) %>
+      </div>
+
+      <%- require("../components/checkbox/template.ejs")({
+        type: "checkbox",
+        label: 'Я соглашаюсь с <a href=“/” target=“_blank”>политикой конфиденциальности</a>'
+      }) %>
+    </div>
+    <div class="modal__actions-right">
+      <%- require("../components/button/template.ejs")({
+        extraAttrs: [
+          'data-js-modal-close-button'
+        ],
+        label: "ОТПРАВИТЬ",
+        icon: "arrow-right"
+      }) %>
+    </div>
+
+  </footer>
+</div>
+
+

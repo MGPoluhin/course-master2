@@ -1,0 +1,68 @@
+@import "../media.pcss";
+
+.modal{
+    --modal-padding:80px 80px;
+    --modal-display:none;
+    --header-margine-bottom:25px;
+    --title-margine-bottom:50px;
+    --recaptcha-margine: 0 43px 0 0;
+    display: none;
+    padding: var(--modal-padding);
+    max-width: 1414px;
+    width: 100%;
+    &__header{
+        margin-bottom: var(--header-margine-bottom);
+    }
+    &__title{
+        margin-bottom: var(--title-margine-bottom);
+    }
+    &__actions{
+        display: flex;
+        justify-content: space-between;
+        &-left{
+            display: flex;
+
+        }
+        &-right{
+            display: flex;
+            align-items: flex-end;
+
+        }
+
+    }
+    &__recaptcha{
+        margin: var(--recaptcha-margine);
+    }
+}
+
+@media (--tablet-s) {
+    --modal-padding:60px 60px;
+    --modal-display:none;
+    --header-margine-bottom:25px;
+    --title-margine-bottom:50px;
+
+}
+
+
+@media (--mobile){
+    .modal {
+    --modal-padding:60px 60px;
+    --modal-display:none;
+    --header-margine-bottom:25px;
+    --title-margine-bottom:50px;
+    --recaptcha-margine:0 0 10px 0;
+
+        &__actions {
+            flex-direction: column;
+
+            &-left {
+                flex-direction: column;
+                margin-bottom: 20px;
+            }
+
+            &-right {
+               justify-content: flex-end;
+            }
+        }
+    }
+}

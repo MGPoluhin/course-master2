@@ -1,0 +1,61 @@
+<%
+const cfg = { ...require("./data.json"), ...arguments?.[0] }
+const {
+	extraClasses,
+	extraAttrs,
+	href,
+	label,
+	subtitle,
+	imgScr,
+	deadlineTimer,
+	isMainCard
+} = cfg
+%>
+
+<%
+const additionalClass = (isMainCard) ? "" : "";
+
+const classes = `event-card ${extraClasses.join(" ")} ${additionalClass}`.trim();
+const attrs = extraAttrs.join(" ")
+%>
+
+<div
+	class="<%= classes %>"
+	<%- extraAttrs %>
+>
+<% if (isMainCard) { %>
+	<img class="event-card__image event-card__image--full-height"
+		 src=<%=imgScr%>
+		 alt=""
+		 width="425" height="500" loading="lazy"
+	/>
+
+	<div class="event-card__body">
+		<div class="event-card__body-time">
+			<%= subtitle %>
+		</div>
+		<div class="event-card__body-content">
+			<%= label %>
+		</div>
+	</div>
+<% } else { %>
+	<% if (imgScr!=="") {%>
+		<img class="event-card__image"
+			 src=<%=imgScr%>
+			 alt=""
+			 width="425" height="250" loading="lazy"
+		/>
+	<%}%>
+	<div class="event-card__body">
+		<div class="event-card__body-time">
+			<%= subtitle %>
+		</div>
+
+		<div class="event-card__body-content">
+			<%= label %>
+		</div>
+	</div>
+
+<% } %>
+
+</div>

@@ -1,0 +1,117 @@
+@import "../../styles/mixins.pcss";
+
+.button {
+  --height: 40px;
+  --paddingX: 20px;
+  --textColor: var(--c-light);
+  --bgColor: var(--c-main);
+  --iconSize: 26px;
+  --iconOffset: 15px;
+  --iconColor: var(--c-light);
+
+
+  --hoverTextColor: var(--c-light);
+  --hoverBgColor: var(--c-accent);
+  --hoverIconColor: var(--c-light);
+
+  --focusTextColor: var(--c-dark);
+  --focusBgColor: var(--c-light);
+  --focusIconColor: var(--c-dark);
+
+  --disabledTextColor: var(--c-dark);
+  --disabledBgColor: var(--c-gray);
+  --disabledIconColor: var(--c-dark);
+
+  --font-family: var(--base-font-family);
+  --font-weight: 700;
+  --line-height: var(--base-line-height);
+  --font-size: 14px;
+
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  font-size: var(--font-size);
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--height);
+  padding-inline: var(--paddingX);
+  color: var(--textColor);
+  background-color: var(--bgColor);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--hoverTextColor);
+    background-color: var(--hoverBgColor);
+
+    .button__icon {
+      --color: var(--hoverIconColor);
+    }
+  }
+
+  &:focus {
+    color: var(--focusTextColor);
+    background-color: var(--focusBgColor);
+
+    .button__icon {
+      --color: var(--focusIconColor);
+    }
+  }
+
+  &:disabled {
+    color: var(--disabledTextColor);
+    background-color: var(--disabledBgColor);
+
+    .button__icon {
+      --color: var(--disabledIconColor);
+    }
+  }
+
+  &--transparent {
+    --textColor: var(--c-gray);
+    --bgColor: transparent;
+    --iconColor: var(--c-main);
+  }
+  &--transparent-2{
+    --textColor: rgba(51, 51, 51, 1);
+    --bgColor: transparent;
+    --iconColor: var(--c-main);
+
+    --hoverTextColor: --textColor;
+    --hoverBgColor: --bgColor;
+    --hoverIconColor: --iconColor;
+
+    --focusTextColor: --textColor;
+    --focusBgColor: --bgColor;
+    --focusIconColor: --iconColor;
+
+    .button__label{
+      text-align: left;
+    }
+
+    font-weight: 700;
+    text-transform: uppercase;
+
+  }
+
+  &__icon {
+    --size: var(--iconSize);
+    --color: var(--iconColor);
+  }
+}
+
+@media (--mobile) {
+  .button {
+    --height: 40px;
+    --paddingX: 10px;
+  }
+}
+
+@media (--tablet) {
+  .button {
+    &--transparent-2{
+      padding: 0 0;
+    }
+  }
+}

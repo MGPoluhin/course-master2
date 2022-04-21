@@ -1,0 +1,84 @@
+<%
+const cfg = { ...require("./data.json"), ...arguments?.[0] }
+const {
+	extraClasses,
+	extraAttrs,
+		href,
+		label,
+	subtitle,
+		imgScr,
+		deadlineTimer,
+	isMainCard
+
+} = cfg
+%>
+
+<%
+const additionalClass = (isMainCard) ? "" : "";
+
+const classes = `news-card ${extraClasses.join(" ")} ${additionalClass}`.trim();
+const attrs = extraAttrs.join(" ")
+const getNewsImg = () => {
+	if (imgScr!=="") {
+		return `
+		<div class="news-card__image">
+			<span>
+				<img src= ${imgScr} alt="" width="425px" height="250" loading="lazy">
+			</span>
+		</div>
+      `
+	} else {
+		return ""
+	}
+}
+
+const getdeadlineTimer = () => {
+	if (deadlineTimer!=="") {
+		return require('../timer/template.ejs')({
+        deadlineTimer:deadlineTimer
+})
+	} else {
+		return ""
+	}
+}
+%>
+
+
+<a href="/"
+	class="<%= classes %>"
+	<%- extraAttrs %>
+>
+	<% if (isMainCard) { %>
+
+			<div class="news-card__element-main">
+				<img  class="news-card__image-main" src= <%=imgScr%> alt="" loading="lazy">
+				<div class="news-card__content">
+					<div class="news-card__data-main">
+						<%= subtitle %>
+					</div>
+
+					<div class="news-card__content-main">
+						<%= label %>
+					</div>
+				</div>
+			</div>
+
+	<% } else { %>
+
+		<%- getdeadlineTimer() %>
+		<%- getNewsImg() %>
+		<div class="news-card__element">
+
+			<div class="news-card__data">
+				<%= subtitle %>
+			</div>
+
+			<div class="news-card__content">
+				<%= label %>
+			</div>
+		</div>
+
+
+<% } %>
+</a>
+

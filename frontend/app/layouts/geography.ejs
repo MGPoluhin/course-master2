@@ -1,0 +1,26 @@
+<section class="section section__geo">
+
+		<div class="geo__container">
+			<div class="geo__content">
+				<h2 class="geo__title h1">
+					География присутствия
+				</h2>
+				<div class="geo__advantage">
+					<span class="geo__advantage-item">&gt;100</span>
+					<span class="geo__advantage-item geo__advantage-item--bottom">хороших мест есть в России</span>
+				</div>
+				<p class="geo__text">Когда речь идет о качестве изоляции, мы понимаем ваши потребности, что подтверждено отзывами более <b>400</b> постоянных клиентов по всему миру.</p>
+				<%- require("../components/button/template.ejs")({
+					label: "О КОМПАНИИ",
+					icon: "arrow-right"
+				}) %>
+			</div>
+			<div class="geo__map">
+
+				<%- require("../components/map/template.ejs")({
+
+				}) %>
+
+			</div>
+	</div>
+</section>

@@ -1,0 +1,44 @@
+@import "../media.pcss";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section {
+
+    &__hero{
+        position: relative;
+
+    }
+
+    &__events{
+        background: #F7F7F7;
+    }
+    &__geo{
+
+    }
+}
+.container {
+    margin: 0 auto;
+    max-width: 1920px;
+
+    padding-left: 110px;
+    padding-right: 110px;
+    @media (--desktop-m) {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    @media (--tablet) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    @media (--mobile) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+
+

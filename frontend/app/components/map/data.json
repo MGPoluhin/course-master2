@@ -1,0 +1,54 @@
+{
+  "extraClasses": [],
+  "extraAttrs": [],
+  "center" : [55.160852, 61.403590],
+  "zoom": 3,
+  "controls": [],
+  "behaviors" : [],
+  "points": [
+    {
+      "coords": [55.160852, 61.403590],
+      "options": {
+        "iconImageHref":"../icons/icon-map-point.svg",
+        "iconLayout": "default#image",
+        "iconImageSize": [32, 37],
+        "hasBalloon": false
+
+
+      },
+      "properties": {
+        "hintTitle": "Хорошее место",
+        "hintSubtitle": "Россия, г. Челябинск"
+      }
+    },
+    {
+      "coords": [69.344140, 88.209517],
+      "options": {
+        "iconImageHref":"../icons/icon-map-point.svg",
+        "iconLayout": "default#image",
+        "iconImageSize": [32, 37],
+        "hasBalloon": false
+
+      },
+      "properties": {
+        "hintTitle": "Хорошее место 2",
+        "hintSubtitle": "Россия, г. Норильск"
+      }
+    },
+    {
+      "coords": [51.660809, 39.199728],
+      "options": {
+        "iconImageHref":"../icons/icon-map-point.svg",
+        "iconLayout": "default#image",
+        "iconImageSize": [32, 37],
+        "hasBalloon": false
+
+      },
+      "properties": {
+        "hintTitle": "Хорошее место 3",
+        "hintSubtitle": "Россия, г. Воронеж"
+      }
+    }
+
+  ]
+}

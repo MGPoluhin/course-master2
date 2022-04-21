@@ -1,0 +1,127 @@
+@import "../../styles/mixins.pcss";
+@import "../../styles/media.pcss";
+.geo {
+
+    font-family: var(--base-font-family);
+    font-weight: var(--base-font-weight);
+    font-size: var(--base-font-size);
+    line-height: var(--base-line-height);
+    &__title{
+
+        --title-padding-bottom: 40px;
+
+        padding-bottom: var(--title-padding-bottom);
+    }
+    &__container{
+        display: flex;
+        width: 100%;
+
+        align-items: stretch;
+        padding-right: 0;
+
+        margin: 0 auto;
+        max-width: 1920px;
+        padding-left: 110px;
+        @media (--desktop-m) {
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        @media (--tablet) {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+        @media (--mobile) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    &__content{
+        --content-padding-top: 160px;
+        --content-padding-right: 40px;
+
+        max-width: 535px;
+        padding-top: var(--content-padding-top);
+        padding-right: var(--content-padding-right);
+    }
+    &__advantage{
+
+        --item-font-size: 64px;
+        --item-line-height: 1.09;
+        --item-margin-bottom: 10px;
+        --botoom-font-size: 22px;
+        --botoom-line-height: 1.45;
+        --botoom-margin-bottom: 30px;
+
+
+
+        display: flex;
+        flex-direction: column;
+        color: var(--c-main);
+        font-family: var(--base-font-family);
+        &-item{
+            font-size: var(--item-font-size);
+            line-height: var(--item-line-height);
+            color: var(--c-main);
+            font-weight: 600;
+            margin-bottom: var(--item-margin-bottom);
+            &--bottom{
+                font-size: var(--botoom-font-size);
+                line-height: var(--botoom-line-height);
+                font-weight: 700;
+                margin-bottom: var(--botoom-margin-bottom);
+
+            }
+        }
+    }
+
+    &__text{
+
+        --text-margin-bottom: 50px;
+
+        color: var(--c-dark);
+        font-family: var(--base-font-family);
+        font-weight: var(--base-font-weight);
+        font-size: var(--base-font-size);
+        line-height: var(--base-line-height);
+        margin-bottom: var(--text-margin-bottom);
+    }
+    &__map{
+        flex-grow: 1;
+        max-height: 890px;
+    }
+
+}
+
+@media (--desktop-m) {
+    .geo {
+        &__title{
+            --title-padding-bottom: 40px;
+        }
+        &__container {
+            flex-direction: column;
+        }
+        &__content{
+            --content-padding-top: 40px;
+            --content-padding-right: 0px;
+            max-width: none;
+            margin-bottom: 40px;
+        }
+        &__advantage {
+            --item-font-size: 64px;
+            --item-line-height: 1.09;
+            --item-margin-bottom: 10px;
+            --botoom-font-size: 22px;
+            --botoom-line-height: 1.45;
+            --botoom-margin-bottom: 30px;
+        }
+        &__text{
+            --text-margin-bottom: 30px;
+        }
+    }
+}
+@media (--mobile-s) {
+    .geo {
+        &__map{
+            display: none;
+        }
+    }}

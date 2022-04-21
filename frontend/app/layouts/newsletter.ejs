@@ -1,0 +1,27 @@
+<section class="newsletter">
+    <div class="newsletter__container container">
+        <form class="newsletter__inner">
+            <header class="newsletter__header">
+                <h2 class="newsletter__title">Новостная рассылка</h2>
+                <div class="newsletter__subtitle">Будьте в курсе самых свежих новостей, новых решений и реализованных
+                    проектов
+                </div>
+            </header>
+            <div class="newsletter__content">
+                <input class="newsletter__form-input" name="email" placeholder="Введите ваш e-mail" type="email" data-input-required="email">
+                <%- require("../components/button/template.ejs")({
+                    extraClasses: [
+                        "button--transparent-2"
+                    ],
+                    label: "подписаться на новостную рассылку",
+                    icon: "arrow-right-small",
+                    iconprev: true
+                }) %>
+            </div>
+            <%- require("../components/checkbox/template.ejs")({
+                type: "checkbox",
+                label: 'Я соглашаюсь с <a href=“/” target=“_blank”>политикой конфиденциальности</a>'
+            }) %>
+        </form>
+    </div>
+</section>

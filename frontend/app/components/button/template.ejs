@@ -1,0 +1,75 @@
+<%
+const cfg = {...require("./data.json"), ...arguments?.[0]};
+const {
+  extraClasses,
+  extraAttrs,
+  type,
+  href,
+  label,
+  labelIsHidden,
+  icon,
+  iconprev,
+  disabled,
+} = cfg;
+%>
+<%
+const additionalClass = (labelIsHidden && icon) ? "button--icon-only" : "";
+const classes = `button ${extraClasses.join(" ")} ${additionalClass}`.trim();
+const attrs = extraAttrs.join(" ");
+const getIconMarkup = () => {
+  if (icon) {
+    return `
+          <svg class="button__icon i-icon">
+            <use href="#icon-${icon}"></use>
+          </svg>
+        `;
+  } else {
+    return "";
+  }
+};
+
+const getLabelMarkup = () => {
+  if (!labelIsHidden) {
+    return `
+          <span class="button__label">${label}</span>
+        `;
+  } else {
+    return "";
+  }
+};
+
+const getBodyMarkup = () => {
+  if (iconprev) {
+  return `
+        ${getIconMarkup()}
+        ${getLabelMarkup()}
+        `;
+  } else {
+    return `
+        ${getLabelMarkup()}
+        ${getIconMarkup()}
+        `;
+  }
+};
+%>
+
+<% if (href) { %>
+  <a
+          class="<%= classes ;%>"
+          href="<%= href ;%>"
+          <%- attrs; %>
+  >
+    <%- getBodyMarkup(); %>
+  </a>
+<% } else { %>
+  <button
+          class="<%= classes ;%>"
+          type="<%= type ;%>"
+          <%- attrs; %>
+  <% if (disabled) { %>
+          disabled
+          <% } %>
+  >
+    <%- getBodyMarkup(); %>
+  </button>
+<% } %>

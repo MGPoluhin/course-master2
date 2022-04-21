@@ -1,0 +1,84 @@
+@import "../../styles/mixins.pcss";
+@import "../../styles/media.pcss";
+.advantages {
+
+    --title-font-size:60px;
+    --title-line-height:.8;
+    --subtitle-font-size: 15px;
+    --subtitle-line-height: 18px;
+    --subtitle-margin:0 16px 0 16px;
+    --item-padding: 0 0 0 15px;
+    --item-color: var(--c-light);
+    --item-flex-basis: 50%;
+    --item-margin: 20px;
+    --advantage-bg:rgba(0, 56, 130, .8);
+    --advantage-z-index:10;
+    --advantage-padding: 20px 0;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: var(--advantage-z-index);
+        background: var(--advantage-bg);
+        padding: var(--advantage-padding);
+
+    &__list{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+
+
+    }
+    &__item{
+        flex-basis: var(--item-flex-basis);
+
+        padding-right: var(--item-padding);
+        color: var(--item-color);
+        margin: var(--item-margin);
+        display: flex;
+        align-items: center;
+    }
+    &__title{
+        font-size: var(--title-font-size);
+        line-height: var(--title-line-height);
+        white-space: nowrap;
+    }
+    &__subtitle{
+        font-size: var(--subtitle-font-size);
+        line-height: var(--subtitle-line-height);
+        margin: var(--subtitle-margin);
+    }
+}
+
+@media (--desktop-s) {
+    .advantages {
+        --advantage-bg: var(--c-main);
+        position: static;
+    }
+}
+@media (--tablet) {
+
+    .advantages {
+
+        &__list {
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        }
+}
+@media (--tablet-xxs){
+    .advantages {
+        --item-margin: 10px;
+        --title-font-size:30px;
+        --item-margin-bottom: 20px;
+
+
+}}
+@media (--mobile-xs){
+    .advantages {
+        --item-flex-basis: 98%;
+
+
+    }}
+

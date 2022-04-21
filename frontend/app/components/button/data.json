@@ -1,0 +1,11 @@
+{
+  "extraClasses": [],
+  "extraAttrs": [],
+  "type": "button",
+  "href": "",
+  "label": "Click me!",
+  "labelIsHidden": false,
+  "icon": false,
+  "disabled": false,
+  "iconprev" : false
+}

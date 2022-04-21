@@ -1,0 +1,103 @@
+<%
+const cfg = { ...require("./data.json"), ...arguments?.[0] }
+const {
+	extraClasses,
+	extraAttrs
+} = cfg
+%>
+
+<%
+const classes = `header ${extraClasses.join(" ")}`.trim()
+const attrs = extraAttrs.join(" ")
+%>
+
+<header
+	class="<%= classes %>"
+	<%- extraAttrs %>
+>
+	<div class="header__left">
+		<div class="header__logo">
+			<%- require("../logo/template.ejs")({
+				extraClasses: [
+					"header__logo"
+				]
+
+			}) %>
+		</div>
+		<nav class="header__navigation">
+			<ul class="header__navigation-list">
+				<li class="header__navigation-item"><a href="/" class="header__navigation-link">О компании</a></li>
+				<li class="header__navigation-item"><a href="/" class="header__navigation-link">Продукция</a></li>
+				<li class="header__navigation-item"><a href="/" class="header__navigation-link">Исследования</a></li>
+				<li class="header__navigation-item"><a href="/" class="header__navigation-link">События</a></li>
+				<li class="header__navigation-item"><a href="/" class="header__navigation-link">Контакты</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="header__right">
+		<div class="header__callback">
+			<% const params = {
+				src: '#modal-feedback',
+			} %>
+			<%- require("../button/template.ejs")({
+				extraAttrs: [
+					`data-js-modal-open-button=${JSON.stringify(params)}`
+				],
+				label: 'ОБРАТНАЯ СВЯЗЬ'
+			}) %>
+		</div>
+
+		<div class="header__lang-switcher">
+			<%- require("../dropdown/template.ejs")({
+
+			}) %>
+		</div>
+
+		<div class="header__search">
+			<div class="quick-search">
+				<%- require("../button/template.ejs")({
+					extraClasses: [
+						"button--transparent"
+					],
+					icon: "eye",
+					labelIsHidden: true
+
+				}) %>
+			</div>
+		</div>
+
+		<div class="header__menu">
+			<%- require("../button/template.ejs")({
+				extraClasses: [
+					"button--transparent",
+						"BurgerButton"
+				],
+				extraAttrs: [
+					`data-js-burger-button`
+				],
+				icon: "menu-burger",
+				labelIsHidden: true
+			}) %>
+
+			<div class="mobile-menu" data-js-mobile-menu>
+				<div class="mobile-menu__inner" data-js-mobile-menu-inner>
+					<div class="mobile-menu-top">
+						<a class="mobile-menu-langlink" href="/" rel="alternate" hreflang="RU">ru</a>
+						<a class="mobile-menu-langlink" href="/en/" rel="alternate" hreflang="EN">en</a>
+					</div>
+					<ul class="mobile-menu__navigation-list">
+						<li class="mobile-menu__navigation-item"><a href="/" class="mobile-menu__navigation-link">О компании</a></li>
+						<li class="mobile-menu__navigation-item"><a href="/" class="mobile-menu__navigation-link">Продукция</a></li>
+						<li class="mobile-menu__navigation-item"><a href="/" class="mobile-menu__navigation-link">Исследования</a></li>
+						<li class="mobile-menu__navigation-item"><a href="/" class="mobile-menu__navigation-link">События</a></li>
+						<li class="mobile-menu__navigation-item"><a href="/" class="mobile-menu__navigation-link">Контакты</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+</header>

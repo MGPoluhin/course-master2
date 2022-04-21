@@ -1,0 +1,27 @@
+@import "../../styles/mixins.pcss";
+.timer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 30px;
+    background-color: var(--c-main);
+    font-family: var(--base-font-family);
+    line-height: 1.55;
+    color: var(--c-light);
+    z-index: 1;
+    &__label{
+        margin-bottom: 5px;
+        font-size: 13px;
+        font-weight: 400;
+    }
+    &__interval {
+        font-size: 18px;
+        font-weight: bold;
+    }
+}
+
+@media (--mobile-s){
+    .timer{
+        padding: 10px 10px;
+    }
+}
