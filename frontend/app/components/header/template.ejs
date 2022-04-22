@@ -80,13 +80,25 @@ const attrs = extraAttrs.join(" ")
 
 			<div class="mobile-menu" data-js-mobile-menu>
 				<div class="mobile-menu__inner" data-js-mobile-menu-inner>
-					<div class="mobile-menu-top">
-						<a class="mobile-menu-langlink" href="/" rel="alternate" hreflang="RU">ru</a>
-						<a class="mobile-menu-langlink" href="/en/" rel="alternate" hreflang="EN">en</a>
-					</div>
+					<ul class="mobile-menu__lang-list">
+						<li class="mobile-menu__lang-item">
+							<a class="mobile-menu__lang-link" href="/" rel="alternate" hreflang="ru">ru</a>
+						</li>
+						<li class="mobile-menu__lang-item">
+							<a class="mobile-menu__lang-link" href="/" rel="alternate" hreflang="en">en</a>
+						</li>
+					</ul>
 					<ul class="mobile-menu__navigation-list">
 						<li class="mobile-menu__navigation-item"><a href="/" class="mobile-menu__navigation-link">О компании</a></li>
-						<li class="mobile-menu__navigation-item"><a href="/" class="mobile-menu__navigation-link">Продукция</a></li>
+						<li class="mobile-menu__navigation-item"><a href="/" class="mobile-menu__navigation-link">Продукция</a>
+							<ul class="mobile-menu__navigation-list nested-list">
+								<li class="nested-item"><a href="/" class="nested-link">Лодки</a></li>
+								<li class="nested-item"><a href="/" class="mobile-menu__navigation-link nested-link">Катеры</a></li>
+								<li class="nested-item"><a href="/" class="mobile-menu__navigation-link nested-link" >Плоты</a></li>
+								<li class="nested-item"><a href="/" class="mobile-menu__navigation-link nested-link">Парусники</a></li>
+							</ul>
+						</li>
+
 						<li class="mobile-menu__navigation-item"><a href="/" class="mobile-menu__navigation-link">Исследования</a></li>
 						<li class="mobile-menu__navigation-item"><a href="/" class="mobile-menu__navigation-link">События</a></li>
 						<li class="mobile-menu__navigation-item"><a href="/" class="mobile-menu__navigation-link">Контакты</a></li>

@@ -18,7 +18,24 @@ export class Map {
         const HintLayout = ymaps.templateLayoutFactory.createClass( "<div class='map__hintlayout'>" +
             "<div class='map__hintlayout-title'>{{properties.hintTitle}}</div>" +
             "<div class='map__hintlayout-content'>{{properties.hintSubtitle}}</div>" +
-            "</div>")
+            "</div>", {
+
+            getShape: function () {
+                var el = this.getElement(),
+                    result = null;
+                if (el) {
+                    var firstChild = el.firstChild;
+                    result = new ymaps.shape.Rectangle(
+                        new ymaps.geometry.pixel.Rectangle([
+                            [0, 0],
+                            [firstChild.offsetWidth, firstChild.offsetHeight]
+                        ])
+                    );
+                }
+                return result;
+            }
+        }
+        )
         ymaps.layout.storage.add('my#hintLayout', HintLayout);
 
         this.map = new ymaps.Map(this.instance,this.cfg,{suppressMapOpenBlock: true})

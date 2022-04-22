@@ -79,12 +79,14 @@
     transition: 0.3s;
     z-index: 999;
 
+
     &:not(.is-open) {
 
         transform: translateX(100%);
     }
 
     &__inner {
+        padding: 26px;
         position: absolute;
         right: 0;
         width: 50vw;
@@ -92,43 +94,79 @@
         background-color: #FFFFFF;
 
     }
-    &-top{
 
+    &__lang-list{
+        display: flex;
+        padding-bottom: 30px;
+        border-bottom: 1px solid hsla(0,0%,100%,.2);
+        list-style-type: none;
+        margin: 0;
+        flex-wrap: wrap;
+
+        .li{
+            margin-bottom: 0;
+        }
     }
-    &-langlink{
+    &__lang-item{
+        margin-right: 30px;
+        display: inline;
+    }
+    &__lang-link{
 
+        text-decoration: none;
+        font-weight: 700;
+        color: var(--c-dark);
+        font-size: 15px;
+        line-height: 20px;
     }
     &__navigation{
 
-        margin-left: 80px;
         &-list{
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             list-style-type: none;
-            margin: 0;
-            padding: 0;
             overflow: hidden;
+
         }
         &-item{
-            margin: 0 20px;
             white-space: nowrap;
+            margin: 10px 0;
         }
         &-link{
-
             text-decoration: none;
             text-transform: uppercase;
             font-family: var(--base-font-family);
             font-style: normal;
             font-weight: 700;
             font-size: 14px;
-            line-height: 19px;
+            line-height: var(--base-line-height);
             color: var(--c-dark);
-
         }
+
     }
 }
+.nested{
 
+    &-list{
+        margin-left: 10px;
+
+    }
+    &-item{
+        margin-top: 5px;
+    }
+    &-link{
+        opacity: 0.8;
+        text-transform: none;
+        font-weight: 400;
+        text-decoration: none;
+        font-family: var(--base-font-family);
+        font-style: normal;
+        font-size: 14px;
+        line-height: var(--base-line-height);
+        color: var(--c-dark);
+    }
+}
 @media (--desktop-m) {
     .header{
         --navigation-margin-left: 40px;
@@ -152,6 +190,13 @@
     .header{
         --callback-margin:0 10px;
     }
+    .mobile-menu {
+
+        &__inner {
+
+            width: 90vw;
+        }
+    }
 }
 @media (--mobile-xs) {
     .header{
@@ -160,4 +205,5 @@
         }
 
     }
+
 }
