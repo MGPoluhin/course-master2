@@ -26,8 +26,8 @@ export default class SlidersCollection extends Collection {
             option:{
                 slidesPerView: 1,
                 navigation: {
-                    nextEl: '.custom-button-next',
-                    prevEl: '.custom-button-prev',
+                    nextEl: '.swiper-navigation-next',
+                    prevEl: '.swiper-navigation-prev',
                 }
             }
         }

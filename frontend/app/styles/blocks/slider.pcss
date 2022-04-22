@@ -1,5 +1,7 @@
 .swiper {
     &-wrapper{
+        counter-reset: Counter Counter2;
+        counter-increment: Counter2;
 
     }
     &-slide{
@@ -8,6 +10,37 @@
             max-height: 70vh;
             position: relative;
 
+            &:before {
+                position: absolute;
+                z-index: 200;
+                counter-increment: Counter;
+                content: counter(Counter);
+                color: white;
+                background: $color2;
+                display: inline-block;
+                text-align: center;
+                line-height: normal;
+                height: auto;
+                width: auto;
+                font-size: 180px;
+            }
+            &:after {
+                position: absolute;
+                z-index: 200;
+                right: 120px;
+                top:0px;
+
+                counter-increment: Counter2;
+                content: counter(Counter2);
+                color: white;
+                background: $color2;
+                display: inline-block;
+                text-align: center;
+                line-height: normal;
+                height: auto;
+                width: auto;
+                font-size: 180px;
+            }
         }
         img{
             width: 100%;
@@ -15,13 +48,39 @@
             object-fit: cover;
         }
     }
+
     &-navigation{
         position: absolute;
         bottom: 20%;
         right: 10%;
         z-index: 1000;
+        &-prev{
+            transform: rotate(180deg);
+        }
+        &-next{
+
+        }
+        svg use {
+            fill: currentColor;
+        }
+        &__icon{
+            --color: var(--c-light);
+
+            height: 26px;
+            width:141px;
+            fill-opacity:0;
+            :hover{
+                fill-opacity:1;
+            }
+        }
+    }
+    &-button-disabled{
+        :hover{
+            fill-opacity:0 !important;
+        }
     }
 }
+
 .slider__container{
     position: absolute;
     z-index: 1;
@@ -39,16 +98,5 @@
     }
     &__text{
         margin-bottom: 40px;
-    }
-}
-
-
-.custom-button{
-
-    &-prev {
-
-    }
-    &-next {
-
     }
 }

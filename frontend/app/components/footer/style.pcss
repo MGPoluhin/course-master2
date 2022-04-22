@@ -108,11 +108,24 @@
         flex-direction: row;
         justify-content: flex-end;
         margin-top: var(--container-margin-top);
-    }
-    &__item{
-        margin-left: var(--item-margin-left);
+        list-style-type: none;
 
     }
+    &__item{
+        &:not(:first-child) {
+            margin-left: var(--item-margin-left);
+        }
+    }
+    &__link{
+        .i-icon {
+            --size: 40px;
+            --color:#7F9BC0;
+            &:hover {
+                    --color: #5f8bba;
+            }
+        }
+    }
+
 }
 
 
