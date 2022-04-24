@@ -19,10 +19,12 @@ const classes = `event-card ${extraClasses.join(" ")} ${additionalClass}`.trim()
 const attrs = extraAttrs.join(" ")
 %>
 
-<div
+<a
 	class="<%= classes %>"
 	<%- extraAttrs %>
+	href="/"
 >
+
 <% if (isMainCard) { %>
 	<img class="event-card__image event-card__image--full-height"
 		 src=<%=imgScr%>
@@ -58,4 +60,4 @@ const attrs = extraAttrs.join(" ")
 
 <% } %>
 
-</div>
+</a>

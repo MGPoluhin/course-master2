@@ -1,5 +1,57 @@
-@import "../../styles/mixins.pcss";
-
 .checkbox {
+    font-family: var(--base-font-family);
+    font-size: var(--base-font-size);
+    font-weight: var(--base-font-weight);
+    line-height: var(--base-line-height);
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+
+    user-select: none;
+    &__input{
+        position: absolute;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        display: none;
+
+    }
+    &__label{
+        padding-left: 1.2em;
+    }
+    &__emulator{
+
+        position: absolute;
+        margin-left: -30px;
+
+        width: 20px;
+        height: 20px;
+        background-color: var(--c-light);
+        border: 1px solid #D9D9D9;
+        &:after{
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+    }
+    &__input:checked + .checkbox__emulator:after {
+        display: block;
+    }
+
+}
+
+.checkbox .checkbox__emulator:after{
+
+        left: 6px;
+        top: 2px;
+        width: 6.6px;
+        height: 11px;
+        border: solid var(--c-main);
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
 
 }

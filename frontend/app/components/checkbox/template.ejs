@@ -23,23 +23,13 @@ const attrs = extraAttrs.join(" ")
 <label
 	class="<%= classes %>"
 	<%- extraAttrs %>
-
-	<% if (required) { %>
-		required
-	<% } %>
-	<% if (disabled) { %>
-		disabled
-	<% } %>
 >
 	<input class="checkbox__input"
 		   type = <%= type %>
 		   <%- name %>
 		   <%- id %>
-		   <%- value %>>
+	>
 	<span class="checkbox__emulator"></span>
-	<span class=“checkbox__label”>
-		<%- label %>
-	</span>
-
+	<span class=“checkbox__label”><%- label %></span>
 
 </label>

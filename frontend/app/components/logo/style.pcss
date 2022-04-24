@@ -1,26 +1,21 @@
 @import "../../styles/mixins.pcss";
 
-.logo {
+.logo__img{
+    object-fit: cover;
+}
+.logo{
     display: inline-flex;
-    &__img {
-        width: 253px;
-        height: 62px;
-    }
-    &__alt-img {
-        width: 116px;
-        height: 80px;
-    }
-
+}
+.logo-small{
+    display: none;
 }
 
 @media (--mobile) {
-    .logo {
-        &__img {
-            width: 126px;
-            height: 31px;
-        }
-        &__alt-img {
+    .logo{
+        display: none;
+    }
+    .logo-small{
 
-        }
+        display: inline-flex;
     }
 }

@@ -8,9 +8,10 @@
     --navigation-margin-left: 80px;
     --item-margin: 0 20px;
     --link-font-size: 14px;
-
+    background-color: var(--c-light);
+    z-index: 25;
     padding: var( --header-padding);
-    position: relative;
+    position: fixed;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -77,7 +78,7 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     transition: 0.3s;
-    z-index: 999;
+    z-index: 10;
 
 
     &:not(.is-open) {
@@ -183,7 +184,7 @@
     }
     .BurgerButton{
         display: block;
-        z-index: 1000;
+        z-index: 30;
     }
 }
 @media (--mobile) {
