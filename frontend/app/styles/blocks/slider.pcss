@@ -25,7 +25,7 @@
                 line-height: var(--base-line-height);
                 height: auto;
                 width: auto;
-                font-size: calc(100px + (180 - 100) * ((100vw - 360px) / (1920 - 360)));
+                font-size: calc(80px + (180 - 80) * ((100vw - 360px) / (1920 - 360)));
                 font-weight: 800;
                 -webkit-text-fill-color: transparent;
                 -webkit-text-stroke: 2px var(--c-light);
@@ -47,7 +47,7 @@
                 line-height: var(--base-line-height);
                 height: auto;
                 width: auto;
-                font-size: calc(100px + (180 - 100) * ((100vw - 360px) / (1920 - 360)));
+                font-size: calc(80px + (180 - 80) * ((100vw - 360px) / (1920 - 360)));
                 font-weight: 800;
                 -webkit-text-fill-color: transparent;
                 -webkit-text-stroke: 2px var(--c-light);
@@ -98,14 +98,14 @@
     }
 }
 
-.slider__container{
-    position: absolute;
-    z-index: 1;
-    top: 21.5%;
-    left: 10%;
-
-}
 .slide{
+    &__container {
+        position: absolute;
+        z-index: 1;
+        top: 21.5%;
+        left: 10%;
+        margin-right: 30px;
+    }
     &__content{
         color: var(--c-light);
         max-width: 748px;
