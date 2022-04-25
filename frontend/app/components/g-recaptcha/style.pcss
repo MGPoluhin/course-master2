@@ -1,5 +1,8 @@
 @import "../../styles/mixins.pcss";
-
+@import "../../styles/media.pcss";
 .g-recaptcha {
-
+    @media (--mobile-xxs) {
+        transform: scale(0.9);
+        transform-origin: 0;
+    }
 }

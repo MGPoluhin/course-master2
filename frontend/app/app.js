@@ -30,6 +30,7 @@ import TimerCollection from "./components/timer";
 import SlidersCollection from "./js/sliders";
 import Forms from "./js/forms/index"
 import MapsCollection from "./components/map";
+import GRecaptchaCollections from "./components/g-recaptcha";
 window.App = {
   debug: !!window.location.port,
 
@@ -48,5 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   App.MapsCollection = new MapsCollection()
   App.TimerCollection = new TimerCollection()
+  App.GRecaptchaCollections = new GRecaptchaCollections()
 
 })

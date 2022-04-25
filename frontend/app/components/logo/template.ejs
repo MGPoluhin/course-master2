@@ -19,20 +19,12 @@ const attrs = extraAttrs.join(" ")
 	<%- attrs; %>
 >
 	<% if (isAltView) { %>
-		<img class="logo__alt-img" src="./images/altLogo.png" width="116" height="80" alt="COMPANY" loading="lazy">
+		<img class="logo__img" src="./images/altLogo.png" width="116" height="80" alt="COMPANY" loading="lazy">
+		<img class="logo__img-small" src="./images/altLogo.png" width="116" height="80" alt="COMPANY" loading="lazy">
 	<% } else { %>
-			<img class="logo__img" src="./images/Logo.png" width="253" height="62" alt="COMPANY" loading="lazy">
+		<img class="logo__img" src="./images/Logo.png" width="253" height="62" alt="COMPANY" loading="lazy">
+		<img class="logo__img-small" src="./images/logo-small.png" width="70" height="62" alt="COMPANY" loading="lazy">
 	<% } %>
 </a>
-<a
-	class="logo-small"
-	href="<%= href ;%>"
-	<%- attrs; %>
->
-	<% if (isAltView) { %>
-		<img class="logo__img" src="./images/alt-logo-small.png" width="56" height="50" alt="COMPANY" loading="lazy">
-	<% } else { %>
-		<img class="logo__img" src="./images/logo-small.png" width="70" height="62" alt="COMPANY" loading="lazy">
-	<% } %>
-</a>
+
 

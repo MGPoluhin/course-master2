@@ -5,15 +5,29 @@ const {
 	extraAttrs,
 	type,
 	label,
-	name
+	name,
+	isTextarea
 } = cfg
 %>
 
 <%
-const classes = `form-input ${extraClasses.join(" ")}`.trim()
+const additionalClass = (isTextarea) ? "form-input-fullblock" : "";
+const classes = `form-input ${extraClasses.join(" ")} ${additionalClass}`.trim();
 const attrs = extraAttrs.join(" ")
 %>
+<% if (isTextarea) {%>
 
+	<textarea
+			class="<%= classes %>"
+			<%- extraAttrs %>
+			name="<%= name %>"
+			placeholder=""
+			required=""
+			type="<%= type %>"
+	></textarea>
+	<label class="form-label"><%= label %></label>
+
+<% } else { %>
 <input
 	class="<%= classes %>"
 	<%- extraAttrs %>
@@ -24,3 +38,4 @@ const attrs = extraAttrs.join(" ")
 >
 <label class="form-label"><%= label %></label>
 
+<% }%>

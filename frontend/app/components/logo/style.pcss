@@ -1,21 +1,23 @@
 @import "../../styles/mixins.pcss";
 
-.logo__img{
-    object-fit: cover;
-}
 .logo{
-    display: inline-flex;
-}
-.logo-small{
-    display: none;
+    &__img {
+        object-fit: cover;
+        display: inline-flex;
+    }
+    &__img-small{
+        object-fit: cover;
+        display: none;
+    }
 }
 
 @media (--mobile) {
     .logo{
-        display: none;
-    }
-    .logo-small{
-
-        display: inline-flex;
+        &__img {
+            display: none;
+        }
+        &__img-small{
+            display: inline-flex;
+        }
     }
 }
