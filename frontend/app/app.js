@@ -31,6 +31,7 @@ import SlidersCollection from "./js/sliders";
 import Forms from "./js/forms/index"
 import MapsCollection from "./components/map";
 import GRecaptchaCollections from "./components/g-recaptcha";
+
 window.App = {
   debug: !!window.location.port,
 
@@ -40,12 +41,12 @@ window.svg4everybody = svg4everybody
 
 document.addEventListener('DOMContentLoaded', () => {
   new SvgUse()
+  new Forms()
 
   App.Modals = new Modals()
   App.Sliders = new SlidersCollection()
   App.BurgerButton = new BurgerButton()
   App.MobileMenu = new MobileMenu()
-  App.Forms = new Forms()
 
   App.MapsCollection = new MapsCollection()
   App.TimerCollection = new TimerCollection()

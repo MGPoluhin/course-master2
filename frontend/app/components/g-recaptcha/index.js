@@ -17,7 +17,7 @@ export class GRecaptcha {
 }
 
 export default class GRecaptchaCollections extends Collection{
-    static instance = '[g-recaptcha]'
+    static instance = '[data-js-recaptcha]'
     constructor() {
         super();
         this.load()

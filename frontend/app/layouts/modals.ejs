@@ -10,29 +10,38 @@
 
 
 
-  <form class="form">
+  <form class="form" action="./json/exampleSuccessForm.json" method="get" novalidate autocomplete="off" data-js-form>
     <div class="form__row">
       <div class="form__col">
         <div class="form__row">
           <%- require("../components/input/template.ejs")({
+            extraAttrs: [
+              'data-js-input-required=""'
+            ],
             label: "ФИО*",
             type: "text",
-            name: "suidfsdkf"
+            name: "user-name"
 
           }) %>
         </div>
         <div class="form__row">
           <%- require("../components/input/template.ejs")({
+            extraAttrs: [
+              'data-js-input-required=""'
+            ],
             label: "ТЕЛЕФОН*",
             type: "text",
-            name: "suidfsdkf"
+            name: "tel"
           }) %>
         </div>
         <div class="form__row">
           <%- require("../components/input/template.ejs")({
+            extraAttrs: [
+              'data-js-input-required="email"'
+            ],
             label: "ЭЛЕКТРОННАЯ ПОЧТА*",
-            type: "text",
-            name: "suidfsdkf"
+            type: "email",
+            name: "user-email"
           }) %>
         </div>
       </div>
@@ -45,34 +54,39 @@
           }) %>
       </div>
     </div>
+    <footer class="modal__actions">
+      <div class="modal__actions-left">
 
-  </form>
+        <div class="modal__recaptcha">
+          <%- require("../components/g-recaptcha/template.ejs")({
+            sitekey: "6Lf-QXsfAAAAACmxka6G6LcSyfAjnygR_rFzIf9V"
+          }) %>
+        </div>
 
-  <footer class="modal__actions">
-    <div class="modal__actions-left">
+        <%- require("../components/checkbox/template.ejs")({
+          type: "checkbox",
+          label: 'Я соглашаюсь с <a href=“/” target=“_blank”>политикой конфиденциальности</a>'
+        }) %>
+      </div>
+      <div class="modal__actions-right">
+        <%- require("../components/button/template.ejs")({
+          extraAttrs: [
+            'data-js-modal-close-button'
+          ],
+          label: "ОТПРАВИТЬ",
+          icon: "arrow-right"
+        }) %>
 
-      <div class="modal__recaptcha">
-        <%- require("../components/g-recaptcha/template.ejs")({
-          sitekey: "6Lf-QXsfAAAAACmxka6G6LcSyfAjnygR_rFzIf9V"
+        <%- require("../components/button/template.ejs")({
+          "type": "submit",
+          "label": "Отправить"
         }) %>
       </div>
 
-      <%- require("../components/checkbox/template.ejs")({
-        type: "checkbox",
-        label: 'Я соглашаюсь с <a href=“/” target=“_blank”>политикой конфиденциальности</a>'
-      }) %>
-    </div>
-    <div class="modal__actions-right">
-      <%- require("../components/button/template.ejs")({
-        extraAttrs: [
-          'data-js-modal-close-button'
-        ],
-        label: "ОТПРАВИТЬ",
-        icon: "arrow-right"
-      }) %>
-    </div>
+    </footer>
+  </form>
 
-  </footer>
+
 </div>
 
 

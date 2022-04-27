@@ -17,22 +17,18 @@ const attrs = extraAttrs.join(" ")
 %>
 <% if (isTextarea) {%>
 
-	<textarea
-			class="<%= classes %>"
-			<%- extraAttrs %>
-			name="<%= name %>"
-			placeholder=""
-			required=""
-	></textarea>
-	<label class="form-label"><%= label %></label>
+<textarea
+		class="<%= classes %>"
+		<%- extraAttrs %>
+		name="<%= name %>"
+></textarea>
+<label class="form-label"><%= label %></label>
 
 <% } else { %>
 <input
 	class="<%= classes %>"
 	<%- extraAttrs %>
 	name="<%= name %>"
-	placeholder=""
-	required=""
 	type="<%= type %>"
 >
 <label class="form-label"><%= label %></label>
