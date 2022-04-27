@@ -7,6 +7,25 @@
 
     }
     &-slide{
+
+        &__container {
+            position: absolute;
+            z-index: 1;
+            top: 21.5%;
+            left: 10%;
+            margin-right: 30px;
+        }
+        &__content{
+            color: var(--c-light);
+            max-width: 748px;
+        }
+        &__title{
+            margin-bottom: 0.67em;
+        }
+        &__text{
+            margin-bottom: 40px;
+        }
+
         &.swiper-slide {
             min-height: 500px;
             height: 90vh;
@@ -99,21 +118,5 @@
 }
 
 .slide{
-    &__container {
-        position: absolute;
-        z-index: 1;
-        top: 21.5%;
-        left: 10%;
-        margin-right: 30px;
-    }
-    &__content{
-        color: var(--c-light);
-        max-width: 748px;
-    }
-    &__title{
-        margin-bottom: 0.67em;
-    }
-    &__text{
-        margin-bottom: 40px;
-    }
+
 }

@@ -3,7 +3,7 @@
  const data = require("./news-data.json");
 %>
 
-<section class="section section__events">
+<section class="section events">
 
 	<div class="events__container container">
 		<header class="events__header">
@@ -11,13 +11,13 @@
 		</header>
 
 
-		<div class="events">
-
+		<div class="events__content">
+			<%- require("../components/timer/template.ejs")({
+				countdownData: new Date("May 5, 2022 12:00:00").getTime(),
+				label: "До начала выставки осталось:"
+			}) %>
 			<ul class="events__list">
-				<%- require("../components/timer/template.ejs")({
-					countdownData: new Date("May 5, 2022 12:00:00").getTime(),
-					label: "До начала выставки осталось:"
-				}) %>
+
 
 				<li class="events__item events__item--full-height">
 					<%- template({

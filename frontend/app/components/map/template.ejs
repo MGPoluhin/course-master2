@@ -1,20 +1,2 @@
-<%
-const cfg = { ...require("./data.json"), ...arguments?.[0] }
-const {
-	extraClasses,
-	extraAttrs
-} = cfg
-%>
-
-<%
-const classes = `map ${extraClasses.join(" ")}`.trim()
-const attrs = extraAttrs.join(" ")
-%>
-
-<div
-	class="<%= classes %>"
-	<%- extraAttrs %>
-	data-js-map='<%- JSON.stringify(cfg) %>'
->
-
-</div>
+<% const cfg = {...require("./data.json"), ...arguments?.[0]};%>
+<div data-js-map='<%- JSON.stringify(cfg) %>' class="map"></div>

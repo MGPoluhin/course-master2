@@ -40,7 +40,7 @@ const attrs = extraAttrs.join(" ")
 			} %>
 			<%- require("../button/template.ejs")({
 				extraAttrs: [
-					`data-js-modal-open-button=${JSON.stringify(params)}`
+					`data-js-modal-open-button='${JSON.stringify(params)}'`
 				],
 				label: 'ОБРАТНАЯ СВЯЗЬ'
 			}) %>
