@@ -29,7 +29,7 @@ export default class Validation {
                 : Validation.patterns.get("");
 
             const isValid = validationFn(input)
-            console.log("Попал в событие в isValid",input,isValid,validateType)
+
             if (isHighlight) {
                 Validation.setInputState(input, isValid)
             }

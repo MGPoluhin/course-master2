@@ -9,7 +9,7 @@ export class GRecaptcha {
     constructor(instance) {
         this.instance = instance
         this.cfg = getConfig(this.instance, GRecaptchaCollections.instance)
-        console.log(this)
+
     }
 
     init() {

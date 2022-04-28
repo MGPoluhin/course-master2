@@ -48,7 +48,7 @@ export class Map {
             .add('mouseleave', function (e){
                 e.get('target').options.set({iconImageSize: [32, 37], iconImageOffset: [-16, -37]});
             });
-        console.log(this.cluster)
+
         this.map.geoObjects.add(this.cluster)
 
 
