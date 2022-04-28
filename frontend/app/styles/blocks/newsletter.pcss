@@ -1,6 +1,7 @@
 @import "../media.pcss";
 @import "../mixins.pcss";
 .newsletter{
+
     --newsletter-background: linear-gradient(180deg, #F7F7F7 50%, var(--c-main) 50%);
     --newsletter-padding: 85px 110px 101px 110px;
 
@@ -50,7 +51,9 @@
         font-weight: 700;
         font-size: 16px;
         line-height: var(--base-font-size);
-
+        &.is-invalid {
+            border: 1px solid var(--c-error);
+        }
         &::placeholder{
             color: var(--c-main);
             text-transform: uppercase;

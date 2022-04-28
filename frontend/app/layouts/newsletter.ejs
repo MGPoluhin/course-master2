@@ -1,6 +1,6 @@
 <section class="newsletter">
     <div class="newsletter__container container">
-        <form class="newsletter__inner">
+        <form class="newsletter__inner" action="./json/exampleSuccessForm.json" method="get" novalidate autocomplete="off" data-js-form>
             <header class="newsletter__header">
                 <h1 class="newsletter__title h2">Новостная рассылка</h1>
                 <div class="newsletter__subtitle">Будьте в курсе самых свежих новостей, новых решений и реализованных
@@ -8,17 +8,21 @@
                 </div>
             </header>
             <div class="newsletter__content">
-                <input class="newsletter__form-input" name="email" placeholder="Введите ваш e-mail" type="email" data-input-required="email">
+                <input class="newsletter__form-input" name="email" placeholder="Введите ваш e-mail" type="email" data-js-input-required="email">
                 <%- require("../components/button/template.ejs")({
                     extraClasses: [
                         "button--transparent-2"
                     ],
+                    type: "submit",
                     label: "подписаться на новостную рассылку",
                     icon: "arrow-right-small",
                     iconprev: true
                 }) %>
             </div>
             <%- require("../components/checkbox/template.ejs")({
+                extraAttrs: [
+                    'data-js-input-required="checkbox"'
+                ],
                 type: "checkbox",
                 label: 'Я соглашаюсь с <a href=“/” target=“_blank”>политикой конфиденциальности</a>'
             }) %>
