@@ -591,7 +591,7 @@
 
 <section class="newsletter">
     <div class="newsletter__container container">
-        <form class="newsletter__inner">
+        <form class="newsletter__inner" action="./json/exampleSuccessForm.json" method="get" novalidate autocomplete="off" data-js-form>
             <header class="newsletter__header">
                 <h1 class="newsletter__title h2">Новостная рассылка</h1>
                 <div class="newsletter__subtitle">Будьте в курсе самых свежих новостей, новых решений и реализованных
@@ -599,14 +599,14 @@
                 </div>
             </header>
             <div class="newsletter__content">
-                <input class="newsletter__form-input" name="email" placeholder="Введите ваш e-mail" type="email" data-input-required="email">
+                <input class="newsletter__form-input" name="email" placeholder="Введите ваш e-mail" type="email" data-js-input-required="email">
                 
 
 
 
   <button
           class="button button--transparent-2"
-          type="button"
+          type="submit"
           
   
   >
@@ -635,7 +635,7 @@
 		   type = checkbox
 		   
 		   
-		   
+		   data-js-input-required="checkbox"
 	>
 	<span class="checkbox__emulator"></span>
 	<span class="checkbox__label">Я соглашаюсь с <a href=“/” target=“_blank”>политикой конфиденциальности</a></span>
