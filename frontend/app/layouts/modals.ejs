@@ -31,7 +31,7 @@
             ],
             label: "ТЕЛЕФОН*",
             type: "text",
-            name: "tel"
+            name: "user-tel"
           }) %>
         </div>
         <div class="form__row">
@@ -50,7 +50,7 @@
             isTextarea: true,
             label: "Текст вопроса",
             type: "text",
-            name: "suidfsdkf"
+            name: "user-question"
           }) %>
       </div>
     </div>
@@ -64,22 +64,18 @@
         </div>
 
         <%- require("../components/checkbox/template.ejs")({
+          extraAttrs: [
+            'data-js-input-required="checkbox"'
+          ],
           type: "checkbox",
           label: 'Я соглашаюсь с <a href=“/” target=“_blank”>политикой конфиденциальности</a>'
         }) %>
       </div>
       <div class="modal__actions-right">
         <%- require("../components/button/template.ejs")({
-          extraAttrs: [
-            'data-js-modal-close-button'
-          ],
+          type: "submit",
           label: "ОТПРАВИТЬ",
           icon: "arrow-right"
-        }) %>
-
-        <%- require("../components/button/template.ejs")({
-          "type": "submit",
-          "label": "Отправить"
         }) %>
       </div>
 

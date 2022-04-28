@@ -22,12 +22,13 @@ const attrs = extraAttrs.join(" ")
 
 <label
 	class="<%= classes %>"
-	<%- extraAttrs %>
+
 >
 	<input class="checkbox__input"
 		   type = <%= type %>
 		   <%- name %>
 		   <%- id %>
+		   <%- extraAttrs %>
 	>
 	<span class="checkbox__emulator"></span>
 	<span class="checkbox__label"><%- label %></span>

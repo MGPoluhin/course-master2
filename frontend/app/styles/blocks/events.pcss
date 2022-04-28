@@ -41,12 +41,15 @@
     }
 
 }
+
+@media (--desktop-s){
+    .events__content {
+        --grid-tamplate-columns: repeat(2, 1fr);
+    }
+}
 @media (--tablet-s){
     .events__container{
         --padding-container: 50px 0 60px 0;
-    }
-    .events__content {
-        --grid-tamplate-columns: repeat(2, 1fr);
     }
 }
 @media (--mobile-s){

@@ -12,6 +12,7 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+	<link rel="preload" href="./bundle.js" as="script"/>
 
 <link href="styles/main.css" rel="stylesheet"></head>
 <body>
@@ -628,10 +629,11 @@
 
 <label
 	class="checkbox"
-	
+
 >
 	<input class="checkbox__input"
 		   type = checkbox
+		   
 		   
 		   
 	>
@@ -770,7 +772,7 @@
 
 
 
-  <form class="form">
+  <form class="form" action="./json/exampleSuccessForm.json" method="get" novalidate autocomplete="off" data-js-form>
     <div class="form__row">
       <div class="form__col">
         <div class="form__row">
@@ -780,10 +782,8 @@
 
 <input
 	class="form-input"
-	
-	name="suidfsdkf"
-	placeholder=""
-	required=""
+	data-js-input-required=""
+	name="user-name"
 	type="text"
 >
 <label class="form-label">ФИО*</label>
@@ -797,10 +797,8 @@
 
 <input
 	class="form-input"
-	
-	name="suidfsdkf"
-	placeholder=""
-	required=""
+	data-js-input-required=""
+	name="user-tel"
 	type="text"
 >
 <label class="form-label">ТЕЛЕФОН*</label>
@@ -814,11 +812,9 @@
 
 <input
 	class="form-input"
-	
-	name="suidfsdkf"
-	placeholder=""
-	required=""
-	type="text"
+	data-js-input-required="email"
+	name="user-email"
+	type="email"
 >
 <label class="form-label">ЭЛЕКТРОННАЯ ПОЧТА*</label>
 
@@ -831,66 +827,63 @@
 
 
 
-	<textarea
-			class="form-input  form-input-fullblock"
-			
-			name="suidfsdkf"
-			placeholder=""
-			required=""
-	></textarea>
-	<label class="form-label">Текст вопроса</label>
+<textarea
+		class="form-input  form-input-fullblock"
+		
+		name="user-question"
+></textarea>
+<label class="form-label">Текст вопроса</label>
 
 
       </div>
     </div>
+    <footer class="modal__actions">
+      <div class="modal__actions-left">
 
-  </form>
-
-  <footer class="modal__actions">
-    <div class="modal__actions-left">
-
-      <div class="modal__recaptcha">
-        
+        <div class="modal__recaptcha">
+          
 
 
 
 <div
 	class="g-recaptcha"
 	
+		data-js-recaptcha
 	data-sitekey="6Lf-QXsfAAAAACmxka6G6LcSyfAjnygR_rFzIf9V"
 >
 </div>
 
-      </div>
+        </div>
 
-      
+        
 
 
 
 <label
 	class="checkbox"
-	
+
 >
 	<input class="checkbox__input"
 		   type = checkbox
 		   
 		   
+		   data-js-input-required="checkbox"
 	>
 	<span class="checkbox__emulator"></span>
 	<span class="checkbox__label">Я соглашаюсь с <a href=“/” target=“_blank”>политикой конфиденциальности</a></span>
 
 </label>
 
-    </div>
-    <div class="modal__actions-right">
-      
+      </div>
+      <div class="modal__actions-right">
+        
 
 
 
   <button
           class="button"
-          type="button"
-          data-js-modal-close-button
+          type="submit"
+          
   
   >
     
@@ -905,9 +898,12 @@
         
   </button>
 
-    </div>
+      </div>
 
-  </footer>
+    </footer>
+  </form>
+
+
 </div>
 
 

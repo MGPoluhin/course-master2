@@ -41,14 +41,19 @@
   background-color: var(--bgColor);
   cursor: pointer;
 
+  &--icon-only{
+    --iconOffset: 0;
+  }
 
   &:hover {
     color: var(--hoverTextColor);
     background-color: var(--hoverBgColor);
     transition: .3s ease-out;
+
     .button__icon {
       --color: var(--hoverIconColor);
     }
+
   }
 
   &:focus {
@@ -75,6 +80,7 @@
     --iconColor: var(--c-main);
   }
   &--transparent-2{
+    --iconOffset: 0;
     --textColor: rgba(51, 51, 51, 1);
     --bgColor: transparent;
     --iconColor: var(--c-main);
@@ -90,11 +96,11 @@
     .button__label{
       text-align: left;
     }
-
     font-weight: 700;
     text-transform: uppercase;
 
   }
+
 
   &__icon {
     --size: var(--iconSize);

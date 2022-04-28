@@ -18,10 +18,8 @@ export default class Forms {
 
     handleSubmit(e) {
         const {target} = e;
-        console.log("попал в класс форм",Forms.instance,target)
         if (target.matches(Forms.instance)) {
             e.preventDefault();
-            console.log("попал в класс форм",Forms.instance,target)
             if (Validation.isValid(target)) {
                 FormSend.send(target)
                     .then(
@@ -34,7 +32,7 @@ export default class Forms {
 
     bindEvents() {
         document.addEventListener("submit", e => {
-            console.log("Попал в событие в индекс",e)
+
             this.handleSubmit(e);
         });
     }

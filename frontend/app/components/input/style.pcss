@@ -4,6 +4,7 @@ textarea{
     resize: none;
     overflow: auto;
 }
+
 .form-input{
     --transition: 0.2s;
     --form-input-bg-c: var(--c-gray-2);
@@ -25,9 +26,9 @@ textarea{
         border: var(--form-input-focus-border);
     }
     &:focus+label{
-            color: var(--label-focus-color);
-            font-size: var(--label-font-size);
-            top: var(--label-focus-font-size);
+        color: var(--label-focus-color);
+        font-size: var(--label-font-size);
+        top: var(--label-focus-font-size);
     }
 
     &-fullblock{
@@ -35,14 +36,9 @@ textarea{
         display: block;
         justify-content: end;
     }
-
-
-
-    &is-invalid{
-        border-color: darkred;
+    &.is-invalid {
+        border: 1px solid var(--c-error);
     }
-
-
 }
 .form-label{
     --transition: 0.2s;
